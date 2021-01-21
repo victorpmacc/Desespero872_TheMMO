@@ -1,14 +1,15 @@
-#include "ballController.cpp"
-#include "gameController.cpp"
-// #include "clientController.cpp"
-// #include "sender.cpp"
-// #include "receiver.cpp"
+#include "ballController.hpp"
+#include "gameController.hpp"
+#include "gameView.hpp"
+// #include "clientController.hpp"
+// #include "sender.hpp"
+// #include "receiver.hpp"
 #include <vector>
 #include <string>
-// #include <boost/asio.hpp>
+//#include <boost/asio.hpp>
 
-int main{
-  //std::shared_ptr<GameController> gameController = std::make_shared<GameController>();
+int main(){
+  std::shared_ptr<GameController> gameController = std::make_shared<GameController>();
   //std::shared_ptr<ClientController> clientController = std::make_shared<ClientController>(gameController, FILENAME_STATE_INIT)
 
   //clientController->makeHandshake();
@@ -22,4 +23,5 @@ int main{
   //thread_sender.join();
 
   return 0;
-}
+
+};

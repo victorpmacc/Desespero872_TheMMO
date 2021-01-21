@@ -14,8 +14,8 @@ typedef enum{
 
 class SDL_Keyboard{
   private:
-    const Unit8* state;
+    const Uint8* state;
   public:
     SDL_Keyboard(); // seta o state para receber dados do teclado
     int getInput(); // retorna info do teclado, bitwise, de acordo com a enumeração em KeyboardTeclas
-}
+};

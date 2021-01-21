@@ -20,4 +20,4 @@ class BallController{
     std::shared_ptr<BallView> getView();
     void iterate();
     //json, ref characterController.hpp 26 - fim
-}
+};

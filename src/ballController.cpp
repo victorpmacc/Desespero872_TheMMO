@@ -1,7 +1,7 @@
 #include "ballController.hpp"
 
 BallController::BallController(int posX, int posY, int height, int width){
-  this->ballView = std::shared_ptr<BallView>(new BallView(height, width, "./ball.png"));
+  this->ballView = std::shared_ptr<BallView>(new BallView(height, width, "../assets/ball.png"));
   this->ballModel = std::shared_ptr<BallModel>(new BallModel(posX, posY, height, width));
 }
 

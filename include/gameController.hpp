@@ -15,14 +15,14 @@
 #include <sstream>
 #include <boost/asio.hpp>
 #include <thread>
+#include <unordered_map>
 
 class GameController{
   private:
     //std::unique_ptr<GameModel> gameModel; -> NAO temos game model
     std::unique_ptr<GameView> gameView; // ref classe GameView
 
-    //std::unordered_map<std::string, ballController> ball;
-    std::unique_ptr<BallController> ball; //criado por mim. Nao sei se é assim, imagino  o map tá para quando usa o json
+    std::unordered_map<std::string, BallController> balls; // PERGUNTAR, isso aq eh so pra quando usa o json interrogação
     void updateBallView();
 
     SDL_Keyboard keyboard; // contem state do teclado para ser pego com o getInput()
@@ -42,4 +42,4 @@ class GameController{
     //void readServerStateJson(nlohmann::json stateJson);
 
     bool stop; //por que tá como public e nao private interrogação
-}
+};

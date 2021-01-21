@@ -35,7 +35,7 @@ GameView::GameView(){
     SDL_DestroyWindow(window);
     std::cout << SDL_GetError();
     SDL_Quit();
-    return 1;
+    return;
   }
 }
 
@@ -58,7 +58,7 @@ int GameView::draw(){
       return -1; // para
     }
   }
-  SDL_RenderClear(this->renderer)
+  SDL_RenderClear(this->renderer);
 
   this->drawBackground();
 

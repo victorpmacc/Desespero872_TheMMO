@@ -2,7 +2,6 @@
 #include <iostream>
 
 GameController::GameController(){
-  this->gameModel = std::unique_ptr<GameModel> (new GameModel());
   this->gameView = std::unique_ptr<GameView> (new GameView()); 
   this->keyboard = SDL_Keyboard();
   this->stop = false;
@@ -43,7 +42,7 @@ int GameController::iterate(){
   return returnDraw;
 }
 
-int GameController:get_action(){
+int GameController::get_action(){
   return this->action;
 }
 

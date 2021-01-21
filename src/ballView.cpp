@@ -5,19 +5,21 @@
 #include <cstring>
 #include <stdlib.h>
 
-BallView::BallView(int height, int width){
-  this->rect.height = height;
-  this->rect.width = width;
+BallView::BallView(int height, int width, const char* src_asset){
+  this->rect.h = height;
+  this->rect.w = width;
+  this->src_asset = (char*) malloc(sizeof(char)*(strlen(src_asset)+1));
+  std::strcpy(this->src_asset, src_asset);
 }
 
 void BallView::update(int posX, int posY){
-  this->rect.posX = posX;
-  this->rect.posY = posY; // no código dos meninos, aqui ta como ((x>0) interrogacao x:0)
+  this->rect.x = posX;
+  this->rect.y = posY; // no código dos meninos, aqui ta como ((x>0) interrogacao x:0)
 }
 
 void BallView::set_render(SDL_Renderer *renderer){
   this->renderer = renderer;
-  this->texture = IMG_LoadTexture(renderer, './ball.png')
+  this->texture = IMG_LoadTexture(renderer, src_asset);
 }
 
 SDL_Renderer* BallView::get_render(){
@@ -25,5 +27,5 @@ SDL_Renderer* BallView::get_render(){
 }
 
 void BallView::draw(){
-  SDLRenderCopy(renderer, this->texture, nullptr, &(this->rect));
+  SDL_RenderCopy(renderer, this->texture, nullptr, &(this->rect));
 }

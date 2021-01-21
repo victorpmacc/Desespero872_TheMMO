@@ -24,4 +24,4 @@ class BallModel{
     const SDL_Rect* get_rect(); // Passar pegar os dados para renderização no SDL
 
     //Falta adicionar o referente à passagem para o json. Referencia: bodyModel.hpp 31 e 32
-}
+};

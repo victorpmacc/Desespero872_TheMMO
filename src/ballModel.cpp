@@ -35,16 +35,16 @@ const SDL_Rect* BallModel::get_rect(){
 
 void BallModel::comandoTeclado(int entrada){
   if(entrada & (1 << KEYBOARD_UP)){
-    this->set_posY(this->get_posY - PASSO);
+    this->set_posY(this->get_posY() - PASSO);
   }
   if(entrada & (1 << KEYBOARD_DOWN)){
-    this->set_posY(this->get_posY + PASSO);
+    this->set_posY(this->get_posY() + PASSO);
   }
   if(entrada & (1 << KEYBOARD_LEFT)){
-    this->set_posX(this->get_posX - PASSO);
+    this->set_posX(this->get_posX() - PASSO);
   }
-  if(entrda & (1 << KEYBOARD_RIGHT)){
-    this->set_posX(this->get_posX + PASSO);
+  if(entrada & (1 << KEYBOARD_RIGHT)){
+    this->set_posX(this->get_posX() + PASSO);
   }
 }
 

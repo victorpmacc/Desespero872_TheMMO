@@ -4,7 +4,7 @@
 #include <SDL2/SDL_image.h>
 #include <iomanip>
 #include <iostream>
-#include "ballView.cpp"
+#include "ballView.hpp"
 #include <memory>
 #include <vector>
 
@@ -25,4 +25,4 @@ class GameView{
     void setBackground();
     void addBall(std::shared_ptr<BallView> ball);
     void drawBackground();
-}
+};
