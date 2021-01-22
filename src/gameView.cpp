@@ -44,7 +44,7 @@ void GameView::addBall(std::shared_ptr<BallView> ball){
 }
 
 void GameView::setBackground(){
-  background = IMG_LoadTexture(renderer, "./campo.jpg");
+  background = IMG_LoadTexture(renderer, "../assets/campo.jpg");
 }
 
 void GameView::drawBackground(){
@@ -68,4 +68,11 @@ int GameView::draw(){
 void GameView::finishDraw(){
   SDL_RenderPresent(this->renderer);
   SDL_Delay(30);
+}
+
+GameView::~GameView(){
+  SDL_DestroyRenderer(renderer);
+  SDL_DestroyWindow(window);
+  SDL_DestroyTexture(background);
+  SDL_Quit();
 }
