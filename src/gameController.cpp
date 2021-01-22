@@ -35,7 +35,7 @@ int GameController::iterate(){
 
   this->gameView->finishDraw();
   this->action = this->keyboard.getInput(); // pega o status do teclado
-  if (this->action & (1 << KEYBOARD_ESC)){ // PERGUNTAR DESSA OPERAÇÃO DE SHIFT: oq ela devolve nesse or interrogacao
+  if (this->action & (1 << KEYBOARD_ESC)){
     return -1;
   }
 
