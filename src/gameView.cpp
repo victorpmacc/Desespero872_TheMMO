@@ -67,7 +67,7 @@ int GameView::draw(){
 
 void GameView::finishDraw(){
   SDL_RenderPresent(this->renderer);
-  SDL_Delay(30);
+  SDL_Delay(40);
 }
 
 GameView::~GameView(){

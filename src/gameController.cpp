@@ -30,7 +30,7 @@ int GameController::iterate(){
   int returnDraw = this->gameView->draw();
 
   for(auto &ball: this->balls){
-    ball.second.updateView(); // Chama a atualização do View no ballController. Checar o por que do 'second'
+    ball.second.updateView(); // Chama a atualização do View no ballController. 
   }
 
   this->gameView->finishDraw();

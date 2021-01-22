@@ -5,11 +5,13 @@
 #include <cstring>
 #include <stdlib.h>
 
-BallView::BallView(int height, int width, const char* src_asset){
-  this->rect.h = height;
-  this->rect.w = width;
-  this->src_asset = (char*) malloc(sizeof(char)*(strlen(src_asset)+1));
-  std::strcpy(this->src_asset, src_asset);
+BallView::BallView(){
+  this->posX = 0;
+  this->posY = 0;
+  this->rect.h = 180;
+  this->rect.w = 180;
+  this->rect.x = 0;
+  this->rect.y = 0;
 }
 
 void BallView::update(int posX, int posY){
@@ -19,7 +21,7 @@ void BallView::update(int posX, int posY){
 
 void BallView::set_render(SDL_Renderer *renderer){
   this->renderer = renderer;
-  this->texture = IMG_LoadTexture(renderer, src_asset);
+  this->texture = IMG_LoadTexture(renderer, "../assets/ball.png");
 }
 
 SDL_Renderer* BallView::get_render(){
