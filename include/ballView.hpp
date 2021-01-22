@@ -11,7 +11,7 @@ class BallView{
     SDL_Rect rect;
   public:
     //Construtor:
-    BallView();
+    BallView(int height, int width);
     //Aualiza a textura mostrada na tela (posicao):
     void update(int posX, int posY);
     //Seta o render do jogo:

@@ -27,6 +27,7 @@ class GameController{
     
     int action;
 
+    std::shared_ptr<BallView> ball;
   public:
     GameController(); // criadora
     ~GameController(); // destrutora

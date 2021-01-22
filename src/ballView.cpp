@@ -5,13 +5,9 @@
 #include <cstring>
 #include <stdlib.h>
 
-BallView::BallView(){
-  this->posX = 0;
-  this->posY = 0;
-  this->rect.h = 180;
-  this->rect.w = 180;
-  this->rect.x = 0;
-  this->rect.y = 0;
+BallView::BallView(int height, int width){
+  this->rect.h = height;
+  this->rect.w = width;
 }
 
 void BallView::update(int posX, int posY){
