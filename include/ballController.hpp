@@ -15,7 +15,6 @@ class BallController{
   public:
     BallController(int poX, int posY, int height, int width);
     void updateView();
-    //void updateModel(); -> eu quem tirei, aparentemente nao se usa esse. Pode ser removido
     std::shared_ptr<BallModel> getModel();
     std::shared_ptr<BallView> getView();
     void iterate();

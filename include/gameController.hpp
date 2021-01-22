@@ -3,7 +3,6 @@
 #include "gameView.hpp"
 #include "ballController.hpp"
 #include "sdl_teclado.hpp"
-// #include "gameModel.cpp" -> NAO temos game model
 //#include "json.cpp"
 #include <iostream>
 #include <map>
@@ -19,10 +18,9 @@
 
 class GameController{
   private:
-    //std::unique_ptr<GameModel> gameModel; -> NAO temos game model
     std::unique_ptr<GameView> gameView; // ref classe GameView
 
-    std::unordered_map<std::string, BallController> balls; // PERGUNTAR, isso aq eh so pra quando usa o json interrogação
+    std::unordered_map<std::string, BallController> balls;
     void updateBallView();
 
     SDL_Keyboard keyboard; // contem state do teclado para ser pego com o getInput()
@@ -39,7 +37,7 @@ class GameController{
     //nlohmann::json getStateJson();
     //void readStateJson();
     //void saveStateJson();
-    //void readServerStateJson(nlohmann::json stateJson);
+    //void readServerStateJson(nlohmann::json stateJson); ref gameController.hpp 48
 
     bool stop; //por que tá como public e nao private interrogação
 };

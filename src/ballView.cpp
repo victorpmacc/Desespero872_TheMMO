@@ -16,7 +16,7 @@ BallView::BallView(){
 
 void BallView::update(int posX, int posY){
   this->rect.x = posX;
-  this->rect.y = posY; // no código dos meninos, aqui ta como ((x>0) interrogacao x:0)
+  this->rect.y = posY; // no código dos meninos da arvore, aqui ta como ((x>0) interrogacao x:0)
 }
 
 void BallView::set_render(SDL_Renderer *renderer){
