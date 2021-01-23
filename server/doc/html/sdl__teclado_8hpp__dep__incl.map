@@ -1,0 +1,11 @@
+<map id="include/sdl_teclado.hpp" name="include/sdl_teclado.hpp">
+<area shape="rect" id="node1" title=" " alt="" coords="243,5,418,32"/>
+<area shape="rect" id="node2" href="$sdl__teclado_8cpp.html" title=" " alt="" coords="5,80,152,107"/>
+<area shape="rect" id="node3" href="$ballModel_8hpp.html" title=" " alt="" coords="176,80,341,107"/>
+<area shape="rect" id="node5" href="$ballController_8hpp.html" title=" " alt="" coords="267,155,455,181"/>
+<area shape="rect" id="node8" href="$gameController_8hpp.html" title=" " alt="" coords="398,229,599,256"/>
+<area shape="rect" id="node4" href="$ballModel_8cpp.html" title=" " alt="" coords="107,155,243,181"/>
+<area shape="rect" id="node6" href="$ballController_8cpp.html" title=" " alt="" coords="163,229,322,256"/>
+<area shape="rect" id="node7" href="$main_8cpp.html" title=" " alt="" coords="307,304,413,331"/>
+<area shape="rect" id="node9" href="$gameController_8cpp.html" title=" " alt="" coords="437,304,609,331"/>
+</map>

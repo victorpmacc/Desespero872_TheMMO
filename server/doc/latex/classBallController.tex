@@ -1,0 +1,100 @@
+\hypertarget{classBallController}{}\doxysection{Ball\+Controller Class Reference}
+\label{classBallController}\index{BallController@{BallController}}
+
+
+{\ttfamily \#include $<$ball\+Controller.\+hpp$>$}
+
+
+
+Collaboration diagram for Ball\+Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=185pt]{classBallController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBallController_ab1e09ab6407b8972b53c70a5ea71d4d6}{Ball\+Controller}} (int poX, int posY, int height, int width)
+\item 
+void \mbox{\hyperlink{classBallController_aacc70f7c2420920db9425bb262e87531}{update\+View}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBallModel}{Ball\+Model}} $>$ \mbox{\hyperlink{classBallController_a1eb5f257f88ff9db1b07217172a7944d}{get\+Model}} ()
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBallView}{Ball\+View}} $>$ \mbox{\hyperlink{classBallController_abb9ce236106d167dd8a7e9b73e9f4471}{get\+View}} ()
+\item 
+void \mbox{\hyperlink{classBallController_a1a73db804aad40aad9dfb223e23647b3}{iterate}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBallModel}{Ball\+Model}} $>$ \mbox{\hyperlink{classBallController_a062eca8f2f5acfe583dd5e2537429092}{ball\+Model}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBallView}{Ball\+View}} $>$ \mbox{\hyperlink{classBallController_a21cac3271e2f71e0ed0654c287e419dd}{ball\+View}}
+\item 
+\mbox{\hyperlink{classSDL__Keyboard}{S\+D\+L\+\_\+\+Keyboard}} \mbox{\hyperlink{classBallController_a37267c066d95f2e4850520982de245a7}{keyboard}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBallController_ab1e09ab6407b8972b53c70a5ea71d4d6}\label{classBallController_ab1e09ab6407b8972b53c70a5ea71d4d6}} 
+\index{BallController@{BallController}!BallController@{BallController}}
+\index{BallController@{BallController}!BallController@{BallController}}
+\doxysubsubsection{\texorpdfstring{BallController()}{BallController()}}
+{\footnotesize\ttfamily Ball\+Controller\+::\+Ball\+Controller (\begin{DoxyParamCaption}\item[{int}]{poX,  }\item[{int}]{posY,  }\item[{int}]{height,  }\item[{int}]{width }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBallController_a1eb5f257f88ff9db1b07217172a7944d}\label{classBallController_a1eb5f257f88ff9db1b07217172a7944d}} 
+\index{BallController@{BallController}!getModel@{getModel}}
+\index{getModel@{getModel}!BallController@{BallController}}
+\doxysubsubsection{\texorpdfstring{getModel()}{getModel()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBallModel}{Ball\+Model}} $>$ Ball\+Controller\+::get\+Model (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBallController_abb9ce236106d167dd8a7e9b73e9f4471}\label{classBallController_abb9ce236106d167dd8a7e9b73e9f4471}} 
+\index{BallController@{BallController}!getView@{getView}}
+\index{getView@{getView}!BallController@{BallController}}
+\doxysubsubsection{\texorpdfstring{getView()}{getView()}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBallView}{Ball\+View}} $>$ Ball\+Controller\+::get\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBallController_a1a73db804aad40aad9dfb223e23647b3}\label{classBallController_a1a73db804aad40aad9dfb223e23647b3}} 
+\index{BallController@{BallController}!iterate@{iterate}}
+\index{iterate@{iterate}!BallController@{BallController}}
+\doxysubsubsection{\texorpdfstring{iterate()}{iterate()}}
+{\footnotesize\ttfamily void Ball\+Controller\+::iterate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classBallController_aacc70f7c2420920db9425bb262e87531}\label{classBallController_aacc70f7c2420920db9425bb262e87531}} 
+\index{BallController@{BallController}!updateView@{updateView}}
+\index{updateView@{updateView}!BallController@{BallController}}
+\doxysubsubsection{\texorpdfstring{updateView()}{updateView()}}
+{\footnotesize\ttfamily void Ball\+Controller\+::update\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classBallController_a062eca8f2f5acfe583dd5e2537429092}\label{classBallController_a062eca8f2f5acfe583dd5e2537429092}} 
+\index{BallController@{BallController}!ballModel@{ballModel}}
+\index{ballModel@{ballModel}!BallController@{BallController}}
+\doxysubsubsection{\texorpdfstring{ballModel}{ballModel}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classBallModel}{Ball\+Model}}$>$ Ball\+Controller\+::ball\+Model\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classBallController_a21cac3271e2f71e0ed0654c287e419dd}\label{classBallController_a21cac3271e2f71e0ed0654c287e419dd}} 
+\index{BallController@{BallController}!ballView@{ballView}}
+\index{ballView@{ballView}!BallController@{BallController}}
+\doxysubsubsection{\texorpdfstring{ballView}{ballView}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classBallView}{Ball\+View}}$>$ Ball\+Controller\+::ball\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classBallController_a37267c066d95f2e4850520982de245a7}\label{classBallController_a37267c066d95f2e4850520982de245a7}} 
+\index{BallController@{BallController}!keyboard@{keyboard}}
+\index{keyboard@{keyboard}!BallController@{BallController}}
+\doxysubsubsection{\texorpdfstring{keyboard}{keyboard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSDL__Keyboard}{S\+D\+L\+\_\+\+Keyboard}} Ball\+Controller\+::keyboard\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{ballController_8hpp}{ball\+Controller.\+hpp}}\item 
+src/\mbox{\hyperlink{ballController_8cpp}{ball\+Controller.\+cpp}}\end{DoxyCompactItemize}

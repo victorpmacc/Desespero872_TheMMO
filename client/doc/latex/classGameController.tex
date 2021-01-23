@@ -1,0 +1,138 @@
+\hypertarget{classGameController}{}\doxysection{Game\+Controller Class Reference}
+\label{classGameController}\index{GameController@{GameController}}
+
+
+{\ttfamily \#include $<$game\+Controller.\+hpp$>$}
+
+
+
+Collaboration diagram for Game\+Controller\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=201pt]{classGameController__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classGameController_a7d72ff3f639acb68578e20fee3649b42}{Game\+Controller}} ()
+\item 
+\mbox{\hyperlink{classGameController_aab436961a422d078975bc7a49bdfcab7}{$\sim$\+Game\+Controller}} ()
+\item 
+void \mbox{\hyperlink{classGameController_af365cd7a71dd76730a0bc92adc092103}{start}} ()
+\item 
+int \mbox{\hyperlink{classGameController_a1dcaa8ccc611a07166ec85d9b2ce4480}{iterate}} ()
+\item 
+int \mbox{\hyperlink{classGameController_a641bb2dfa38a2063d5cd9700ddd35539}{get\+\_\+action}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+bool \mbox{\hyperlink{classGameController_a966cca2189883a15beaf56dc4ca1000a}{stop}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classGameController_a7a580010bff98cd91eb77fb1ec2c0f8a}{update\+Ball\+View}} ()
+\end{DoxyCompactItemize}
+\doxysubsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::unique\+\_\+ptr$<$ \mbox{\hyperlink{classGameView}{Game\+View}} $>$ \mbox{\hyperlink{classGameController_a66ba54b6ef4d8e7ca548c822d80d6c96}{game\+View}}
+\item 
+std\+::unordered\+\_\+map$<$ std\+::string, \mbox{\hyperlink{classBallController}{Ball\+Controller}} $>$ \mbox{\hyperlink{classGameController_abce309721b1b30b88cca692ec0b6d3ca}{balls}}
+\item 
+\mbox{\hyperlink{classSDL__Keyboard}{S\+D\+L\+\_\+\+Keyboard}} \mbox{\hyperlink{classGameController_ae86c55a104966f09f38008e6eb56f033}{keyboard}}
+\item 
+int \mbox{\hyperlink{classGameController_a820aba89f6692349d044e3369a6667fb}{action}}
+\item 
+std\+::shared\+\_\+ptr$<$ \mbox{\hyperlink{classBallView}{Ball\+View}} $>$ \mbox{\hyperlink{classGameController_ab3a675be399976c8789b7cf01d0322e2}{ball}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classGameController_a7d72ff3f639acb68578e20fee3649b42}\label{classGameController_a7d72ff3f639acb68578e20fee3649b42}} 
+\index{GameController@{GameController}!GameController@{GameController}}
+\index{GameController@{GameController}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{GameController()}{GameController()}}
+{\footnotesize\ttfamily Game\+Controller\+::\+Game\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGameController_aab436961a422d078975bc7a49bdfcab7}\label{classGameController_aab436961a422d078975bc7a49bdfcab7}} 
+\index{GameController@{GameController}!````~GameController@{$\sim$GameController}}
+\index{````~GameController@{$\sim$GameController}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{$\sim$GameController()}{~GameController()}}
+{\footnotesize\ttfamily Game\+Controller\+::$\sim$\+Game\+Controller (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classGameController_a641bb2dfa38a2063d5cd9700ddd35539}\label{classGameController_a641bb2dfa38a2063d5cd9700ddd35539}} 
+\index{GameController@{GameController}!get\_action@{get\_action}}
+\index{get\_action@{get\_action}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{get\_action()}{get\_action()}}
+{\footnotesize\ttfamily int Game\+Controller\+::get\+\_\+action (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGameController_a1dcaa8ccc611a07166ec85d9b2ce4480}\label{classGameController_a1dcaa8ccc611a07166ec85d9b2ce4480}} 
+\index{GameController@{GameController}!iterate@{iterate}}
+\index{iterate@{iterate}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{iterate()}{iterate()}}
+{\footnotesize\ttfamily int Game\+Controller\+::iterate (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGameController_af365cd7a71dd76730a0bc92adc092103}\label{classGameController_af365cd7a71dd76730a0bc92adc092103}} 
+\index{GameController@{GameController}!start@{start}}
+\index{start@{start}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{start()}{start()}}
+{\footnotesize\ttfamily void Game\+Controller\+::start (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{classGameController_a7a580010bff98cd91eb77fb1ec2c0f8a}\label{classGameController_a7a580010bff98cd91eb77fb1ec2c0f8a}} 
+\index{GameController@{GameController}!updateBallView@{updateBallView}}
+\index{updateBallView@{updateBallView}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{updateBallView()}{updateBallView()}}
+{\footnotesize\ttfamily void Game\+Controller\+::update\+Ball\+View (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [private]}}
+
+
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{classGameController_a820aba89f6692349d044e3369a6667fb}\label{classGameController_a820aba89f6692349d044e3369a6667fb}} 
+\index{GameController@{GameController}!action@{action}}
+\index{action@{action}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{action}{action}}
+{\footnotesize\ttfamily int Game\+Controller\+::action\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGameController_ab3a675be399976c8789b7cf01d0322e2}\label{classGameController_ab3a675be399976c8789b7cf01d0322e2}} 
+\index{GameController@{GameController}!ball@{ball}}
+\index{ball@{ball}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{ball}{ball}}
+{\footnotesize\ttfamily std\+::shared\+\_\+ptr$<$\mbox{\hyperlink{classBallView}{Ball\+View}}$>$ Game\+Controller\+::ball\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGameController_abce309721b1b30b88cca692ec0b6d3ca}\label{classGameController_abce309721b1b30b88cca692ec0b6d3ca}} 
+\index{GameController@{GameController}!balls@{balls}}
+\index{balls@{balls}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{balls}{balls}}
+{\footnotesize\ttfamily std\+::unordered\+\_\+map$<$std\+::string, \mbox{\hyperlink{classBallController}{Ball\+Controller}}$>$ Game\+Controller\+::balls\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGameController_a66ba54b6ef4d8e7ca548c822d80d6c96}\label{classGameController_a66ba54b6ef4d8e7ca548c822d80d6c96}} 
+\index{GameController@{GameController}!gameView@{gameView}}
+\index{gameView@{gameView}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{gameView}{gameView}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$\mbox{\hyperlink{classGameView}{Game\+View}}$>$ Game\+Controller\+::game\+View\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGameController_ae86c55a104966f09f38008e6eb56f033}\label{classGameController_ae86c55a104966f09f38008e6eb56f033}} 
+\index{GameController@{GameController}!keyboard@{keyboard}}
+\index{keyboard@{keyboard}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{keyboard}{keyboard}}
+{\footnotesize\ttfamily \mbox{\hyperlink{classSDL__Keyboard}{S\+D\+L\+\_\+\+Keyboard}} Game\+Controller\+::keyboard\hspace{0.3cm}{\ttfamily [private]}}
+
+\mbox{\Hypertarget{classGameController_a966cca2189883a15beaf56dc4ca1000a}\label{classGameController_a966cca2189883a15beaf56dc4ca1000a}} 
+\index{GameController@{GameController}!stop@{stop}}
+\index{stop@{stop}!GameController@{GameController}}
+\doxysubsubsection{\texorpdfstring{stop}{stop}}
+{\footnotesize\ttfamily bool Game\+Controller\+::stop}
+
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+include/\mbox{\hyperlink{gameController_8hpp}{game\+Controller.\+hpp}}\item 
+src/\mbox{\hyperlink{gameController_8cpp}{game\+Controller.\+cpp}}\end{DoxyCompactItemize}
