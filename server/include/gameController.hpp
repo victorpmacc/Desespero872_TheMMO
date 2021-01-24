@@ -1,10 +1,12 @@
 #pragma once
 
-#include "gameView.hpp"
 #include "ballController.hpp"
 #include "sdl_teclado.hpp"
 #include "json.hpp"
 #include <iostream>
+#include <iomanip>
+#include <string>
+#include <queue>
 #include <map>
 #include <chrono>
 #include <iomanip>
@@ -14,30 +16,26 @@
 #include <sstream>
 #include <boost/asio.hpp>
 #include <thread>
-#include <unordered_map>
 
 class GameController{
   private:
-    std::unique_ptr<GameView> gameView; // ref classe GameView
+    std::map<std::string, BallController> balls;
+    std::ofstream stateWriteFile;
+    std::stringstream stateReadFile;
+    std::string dumpedJson;
 
-    std::unordered_map<std::string, BallController> balls;
-
-    SDL_Keyboard keyboard; // contem state do teclado para ser pego com o getInput()
-    
-    int action;
-
-    std::shared_ptr<BallView> ball;
   public:
     GameController(); // criadora
     ~GameController(); // destrutora
 
+    void updateMovement(std::string id, int acao);
+    std::string addBall(std::string id);
+    int deleteBall(std::string id);
     void start();
     int iterate();
-    int get_action();
     nlohmann::json getStateJson();
-    void readStateJson();
     void saveStateJson();
-    void readServerStateJson(nlohmann::json stateJson);
-
+    std::string get_dumpedJson();
+    void stopGame();
     bool stop; //por que tá como public e nao private interrogação
 };

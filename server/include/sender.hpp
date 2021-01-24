@@ -1,13 +1,10 @@
-
-#include "gameController.hpp"
-#include "clientController.hpp"
+#include "serverController.hpp"
 #include <memory>
 #include <thread>
 #include <string>
 #include <boost/asio.hpp>
-#include <thread>
 #include <chrono>
-#include "json.hpp"
 
-void sender(std::shared_ptr<ClientController> clientController);
+
+void sender(std::shared_ptr<ServerController> serverController, int port);
 

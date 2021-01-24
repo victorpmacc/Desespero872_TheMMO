@@ -2,28 +2,39 @@
 #include <iostream>
 
 GameController::GameController(){
-  this->gameView = std::unique_ptr<GameView> (new GameView()); 
-  this->keyboard = SDL_Keyboard();
   this->stop = false;
 }
 
-void GameController::readServerStateJson(nlohmann::json stateJson){
-  for(auto &ball: this->balls){
-    if(stateJson["balls"].count(ball.first) > 0){ // houver alguma ball jogando
-      this->balls.find(ball.first)->second.readStateJson(stateJson["balls"][ball.first]); //pega do json
-    } else{
-      this->balls.erase(ball.first); //apaga do json
-      continue;
-    }
-    stateJson["balls"].erase(ball.first);
+nlohmann::json GameController::getStateJson(){
+  nlohmann::json stateJson;
+  nlohmann::json ballsJson;
+  for (auto& ball: this->balls){
+    ballsJson[ball.first] = ball.second.getStateJson();
   }
-  std::unordered_map<std::string, nlohmann::json> ballsJson = stateJson["balls"];
-  for(auto &ballJson: ballsJson){
-    BallController b(ballJson.second["model"]["base"]["x"], ballJson.second["model"]["base"]["y"], ballJson.second["model"]["base"]["h"], ballJson.second["model"]["base"]["w"]);
-    b.readStateJson(ballJson.second); //le json atrelado ao ballController
-    this->gameView->addBall(b.getView());
-    this->balls.insert(std::make_pair(ballJson.first, b)); // lista ball
-  }
+  stateJson["balls"] = ballsJson;
+  return stateJson;
+}
+
+void GameController::stopGame(){
+  this->stop = true;
+}
+
+void GameController::saveStateJson(){
+  this->stateWriteFile.open("state.json");
+  stateWriteFile << this->getStateJson();
+  stateWriteFile.close();
+}
+
+std::string GameController::addBall(std::string id){ // ogador ingame
+  BallController b(100, 100, 100, 100);
+  b.set_id(id);
+  this->balls.insert(std::make_pair(b.get_id(), b));
+  return b.get_id();
+}
+
+int GameController::deleteBall(std::string id){
+  this->balls.erase(id);
+  return this->balls.size();
 }
 
 void GameController::start(){
@@ -42,25 +53,26 @@ void GameController::start(){
   this->stop = true;
 }
 
-
-int GameController::iterate(){
-  int returnDraw = this->gameView->draw();
-
-  for(auto &ball: this->balls){
-    ball.second.updateView(); // Chama a atualização do View no ballController do hashmap de cada ball do jogo
-  }
-
-  this->gameView->finishDraw();
-  this->action = this->keyboard.getInput(); // pega o status do teclado
-  if (this->action & (1 << KEYBOARD_ESC)){
-    return -1;
-  }
-
-  return returnDraw;
+void GameController::updateMovement(std::string id, int acao){
+  this->balls.find(id)->second.addLine(acao);
 }
 
-int GameController::get_action(){
-  return this->action;
+int GameController::iterate(){
+
+  for(auto &ball_atual: this->balls){
+    ball_atual.second.iterate();
+  }
+
+  if(this->balls.empty()){
+    return 0;
+  }
+
+  this->dumpedJson = this->getStateJson().dump();
+  return this->stop;
+}
+
+std::string GameController::get_dumpedJson(){
+  return this->dumpedJson;
 }
 
 GameController::~GameController(){} // def destrutora

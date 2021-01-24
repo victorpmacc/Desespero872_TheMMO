@@ -9,14 +9,12 @@
 #include <boost/asio.hpp>
 
 int main(int argc, char *argv[]){
-  std::shared_ptr<GameController> gameController = std::make_shared<GameController>(); //cria GameController
-  std::shared_ptr<ClientController> clientController = std::make_shared<ClientController>(gameController, "../state.ini"); //cria ClientController; state.ini - container
+  std::shared_ptr<GameController> gameController = std::make_shared<GameController>();
+  std::shared_ptr<ServerController> serverController = std::make_shared<ServerController>(gameController, 9001);
   
-  clientController->makeHandshake();
-
-  // Duas threads operantes no client: envio e recebimento atuando simultaneamente
-  std::thread thread_receiver = std::thread(receiver, clientController);
-  std::thread thread_sender = std::thread(sender, clientController);
+  // Duas threads operantes no server: envio e recebimento atuando simultaneamente
+  std::thread thread_receiver = std::thread(receiver, serverController, 9001);
+  std::thread thread_sender = std::thread(sender, serverController, 9001);
 
   gameController->start();
   
@@ -24,5 +22,4 @@ int main(int argc, char *argv[]){
   thread_sender.join();
 
   return 0;
-
 };

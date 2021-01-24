@@ -12,36 +12,30 @@ include_directories(include/)
 
 # Bibliotecas locais (estaticas)
 add_library(ballModel src/ballModel.cpp)
-add_library(ballView src/ballView.cpp)
 add_library(ballController src/ballController.cpp)
 add_library(gameController src/gameController.cpp)
-add_library(gameView src/gameView.cpp)
 add_library(keyboard src/sdl_teclado.cpp)
-add_library(clientController src/clientController.cpp)
+add_library(serverController src/serverController.cpp)
 add_library(sender src/sender.cpp)
 add_library(receiver src/receiver.cpp)
+add_library(iterateQueue src/iterateQueue.cpp)
 
-
-target_link_libraries(gameController gameView)
 target_link_libraries(gameController ballController)
 target_link_libraries(gameController keyboard)
 
 target_link_libraries(ballController ballModel)
-target_link_libraries(ballController ballView)
 target_link_libraries(ballController keyboard)
-target_link_libraries(sender clientController)
-target_link_libraries(receiver clientController)
-
+target_link_libraries(receiver serverController)
+target_link_libraries(iterateQueue serverController)
 
 target_link_libraries(Desespero872 ballModel)
 target_link_libraries(Desespero872 ballController)
-target_link_libraries(Desespero872 ballView)
-target_link_libraries(Desespero872 gameView)
 target_link_libraries(Desespero872 gameController)
 target_link_libraries(Desespero872 keyboard)
-target_link_libraries(Desespero872 clientController)
+target_link_libraries(Desespero872 serverController)
 target_link_libraries(Desespero872 sender)
 target_link_libraries(Desespero872 receiver)
+target_link_libraries(Desespero872 iterateQueue)
 
 
 # Garantir que usaremos C++11 (ou superior, se preciso)

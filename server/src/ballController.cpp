@@ -1,17 +1,15 @@
 #include "ballController.hpp"
 
 BallController::BallController(int posX, int posY, int height, int width){
-  this->ballView = std::shared_ptr<BallView>(new BallView(height, width));
   this->ballModel = std::shared_ptr<BallModel>(new BallModel(posX, posY, height, width));
+  std::cout<<"Nova ball ingame"<<std::endl;
+  std::queue<int> line;
 }
 
-void BallController::updateView(){
-  this->ballView->update(this->ballModel->get_posX(), this->ballModel->get_posY());
-  this->ballView->draw();
-}
-
-std::shared_ptr<BallView> BallController::getView(){
-  return this->ballView;
+void BallController::updateModel(){
+  while((line.size())> 0){
+    this->ballModel->comandoTeclado(line.front());
+  }
 }
 
 std::shared_ptr<BallModel> BallController::getModel(){
@@ -19,14 +17,23 @@ std::shared_ptr<BallModel> BallController::getModel(){
 }
 
 void BallController::iterate(){
-  this->updateView();
+  this->updateModel();
 }
 
 nlohmann::json BallController::getStateJson(){
   nlohmann::json stateJson;
+  stateJson["model"] = this->ballModel->getStateJson();
   return stateJson;
 }
 
-void BallController::readStateJson(nlohmann::json stateJson){
-  this->ballModel->readStateJson(stateJson["model"]);
+std::string BallController::get_id(){
+  return this->id;
+}
+
+void BallController::set_id(std::string id){
+  this->id = id;
+}
+
+void BallController::addLine(int acao){
+  this->line.push(acao);
 }
