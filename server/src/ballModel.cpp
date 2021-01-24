@@ -45,8 +45,8 @@ nlohmann::json BallModel::baseJson(){ //coloca no json
 void BallModel::readBaseJson(nlohmann::json base){ //le json e pega
   this->posX = base["x"];
   this->posY = base["y"];
-  this->height = base["h"];
-  this->width = base["w"];
+  this->rect.h = base["h"];
+  this->rect.w = base["w"];
 }
 
 nlohmann::json BallModel::getStateJson(){

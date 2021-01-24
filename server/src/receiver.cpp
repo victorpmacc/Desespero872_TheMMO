@@ -17,11 +17,16 @@ void receiver(std::shared_ptr<ServerController> serverController, int port){
     nlohmann::json clientJson = nlohmann::json::parse(v);
     std::string request_type = clientJson["type"];
 
+    std::cout<<clientJson<<std::endl;
+
     if(request_type.compare("handshake") == 0){
 
       std::string new_ball_id = serverController->get_gameController()->addBall(remote_endpoint.address().to_string());
       serverController->addEndpoint(remote_endpoint);
       std::cout<<"Handshake Done"<<std::endl;
+      if(firstBall){
+        firstBall = false;
+      }
 
     } else if(request_type.compare("command") == 0){
 
@@ -30,6 +35,7 @@ void receiver(std::shared_ptr<ServerController> serverController, int port){
       std::cout<<"Pedido de acao"<<std::endl;
       serverController->get_gameController()->updateMovement(id, action);
       std::cout<<"Acao done"<<std::endl;
+
 
     } else if(request_type.compare("goodbye") == 0){
 

@@ -8,7 +8,7 @@ void sender(std::shared_ptr<ClientController> clientController){
     int action = clientController->get_gameController()->get_action();
     nlohmann::json request;
     request["type"] = "command";
-    request["body"]["id"] = action;
+    request["body"]["comando"] = action;
     clientController->get_socket()->send_to(boost::asio::buffer(request.dump()), *clientController->get_endpoint());
     std::cout << "Client Enviando..." << std::endl;
 

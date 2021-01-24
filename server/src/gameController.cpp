@@ -12,6 +12,7 @@ nlohmann::json GameController::getStateJson(){
     ballsJson[ball.first] = ball.second.getStateJson();
   }
   stateJson["balls"] = ballsJson;
+  std::cout<<stateJson<<std::endl;
   return stateJson;
 }
 
